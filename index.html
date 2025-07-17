@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assistant IA Jumbo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ZONE CHAT (40%) -->
+  <div id="chat-section">
+    <div id="chatbox">
+      <div id="chat-header">
+        <img src="jumbo1.png" alt="Logo" id="chat-logo" />
+        <span>Assistant IA</span>
+        <button id="close-chat">❌</button>
+      </div>
+      <div id="chat-messages"></div>
+      <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Écris un message..." />
+        <button id="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONE PRODUITS (60%) -->
+  <div id="products-section">
+  <div id="products-wrapper"> <!-- wrapper ajouté -->
+    <div id="products-container"></div>
+  </div>
+
+  <!-- Spinner loading -->
+  <div id="product-loading-spinner" class="spinner-container hidden">
+    <div class="loader"></div>
+  </div>
+</div>
+  
+  
+
+  <audio id="notif-sound" src="notification.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
