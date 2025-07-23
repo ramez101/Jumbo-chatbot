@@ -251,3 +251,41 @@ window.addEventListener("DOMContentLoaded", () => {
   afficherBullesInitiales();
   scrollChatToBottom();
 });
+
+const voiceBtn = document.getElementById("voice-btn");
+
+if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
+  recognition.lang = "fr-FR";
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  recognition.onstart = function () {
+    voiceBtn.textContent = "🎙️";
+    voiceBtn.disabled = true;
+  };
+
+  recognition.onend = function () {
+    voiceBtn.textContent = "🎤";
+    voiceBtn.disabled = false;
+  };
+
+  recognition.onresult = function (event) {
+    const result = event.results[0][0].transcript;
+    userInput.value = result;  // Remplit le champ
+    sendMessage(result);       // Envoie le message
+  };
+
+  recognition.onerror = function (event) {
+    console.error("Erreur vocale :", event.error);
+    afficherMessageBot("❌ Micro non autorisé ou erreur : " + event.error);
+  };
+
+  voiceBtn.addEventListener("click", () => {
+    recognition.start();
+  });
+} else {
+  voiceBtn.disabled = true;
+  voiceBtn.title = "Micro non supporté sur ce navigateur.";
+}
