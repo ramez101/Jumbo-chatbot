@@ -60,3 +60,5 @@ class JumboSpider(scrapy.Spider):
     
 
 
+#scrapy crawl produits -o produits_jumbo.json
+#cd jumbo_scraper
