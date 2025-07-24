@@ -262,19 +262,23 @@ if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
   recognition.interimResults = false;
 
   recognition.onstart = function () {
-    voiceBtn.textContent = "🎙️";
+    // Change l'icône ou ajoute une classe pour indiquer l'enregistrement
+    voiceBtn.textContent = "🎙️ Enregistrement...";
+    voiceBtn.classList.add("recording");
     voiceBtn.disabled = true;
   };
 
   recognition.onend = function () {
+    // Rétablit l'icône initiale
     voiceBtn.textContent = "🎤";
+    voiceBtn.classList.remove("recording");
     voiceBtn.disabled = false;
   };
 
   recognition.onresult = function (event) {
     const result = event.results[0][0].transcript;
-    userInput.value = result;  // Remplit le champ
-    sendMessage(result);       // Envoie le message
+    userInput.value = result;  // Remplit le champ d'entrée
+    sendMessage(result);       // Envoie le message automatiquement
   };
 
   recognition.onerror = function (event) {

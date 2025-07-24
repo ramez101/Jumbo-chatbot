@@ -355,3 +355,7 @@ body.fade-out {
   cursor: pointer;
   border-radius: 5px;
 }
+#voice-btn.recording {
+  background-color: #ff3939; /* Couleur différente pour signaler l'enregistrement */
+  border-color: #f9a825;
+}

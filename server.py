@@ -4,9 +4,7 @@ from together import Together
 import json
 import re
 import unicodedata
-from fuzzywuzzy import fuzz
 from thefuzz import fuzz
-import difflib
 
 app = Flask(__name__)
 CORS(app)
