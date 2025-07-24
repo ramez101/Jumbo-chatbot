@@ -355,7 +355,25 @@ body.fade-out {
   cursor: pointer;
   border-radius: 5px;
 }
-#voice-btn.recording {
-  background-color: #ff3939; /* Couleur différente pour signaler l'enregistrement */
-  border-color: #f9a825;
+@keyframes pulse {
+  0% {
+    background-color: #fdd835;
+    box-shadow: 0 0 0 0 rgba(249, 168, 37, 0.7);
+  }
+  70% {
+    background-color: #fbc02d;
+    box-shadow: 0 0 0 10px rgba(249, 168, 37, 0);
+  }
+  100% {
+    background-color: #fdd835;
+    box-shadow: 0 0 0 0 rgba(249, 168, 37, 0);
+  }
 }
+
+#voice-btn.recording {
+  animation: pulse 1.5s infinite;
+  border-color: #f9a825;
+  color: #000;
+  font-weight: bold;
+}
+
