@@ -8723,7 +8723,7 @@
       "brand": "tenda"
     }
   ],
-  "climatisation": [
+  "climatiseur": [
     {
       "title": "Module WiFi Gree Climatiseur 9K & 12K Inverter Blanc",
       "price": "125,000 TND",
@@ -8731,7 +8731,7 @@
       "image_url": "https://jumbo.tn/9765-medium_default/module-wifi-gree-climatiseur-9k-12k-inverter-blanc.jpg",
       "availability": "Epuisé",
       "reference": "WIFI-9K/12K-INV",
-      "category": "climatisation",
+      "category": "climatiseur",
       "brand": "gree"
     },
     {
@@ -8741,7 +8741,7 @@
       "image_url": "https://jumbo.tn/9764-medium_default/module-wifi-gree-climatiseur-inverter-blanc.jpg",
       "availability": "En arrivage",
       "reference": "WIFI-18K-INV",
-      "category": "climatisation",
+      "category": "climatiseur",
       "brand": "gree"
     },
     {
@@ -8751,11 +8751,9 @@
       "image_url": "https://jumbo.tn/26178-medium_default/rideau-dair-coala-froid-150cm-blanc.jpg",
       "availability": "Sur Commande",
       "reference": "RA150",
-      "category": "climatisation",
+      "category": "climatiseur",
       "brand": "coala"
-    }
-  ],
-  "climatiseur": [
+    },
     {
       "title": "Climatiseur SABA 9000 BTU Froid / Garantie 3 ans",
       "price": "1 199,000 TND",
