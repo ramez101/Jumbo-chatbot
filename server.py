@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify , render_template, send_from_directory
 from flask_cors import CORS
 from together import Together
 import json
@@ -8,7 +8,7 @@ from fuzzywuzzy import fuzz
 import os
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='.')
 CORS(app)
 
 client = Together(api_key="tgp_v1_3cdZMXb--n2gnr2ZXkeSyiCWAbx-il8zun2mhsbw0qA")
@@ -146,7 +146,10 @@ def generer_cartes_html(produits_trouves):
 
 @app.route("/")
 def index():
-    return "✅ The Flask API is up and running! Use POST /api/chat or /api/brands."
+    try:
+        return render_template("index.html")
+    except:
+        return send_from_directory('.', 'index.html')
 
 @app.route("/api/chat", methods=["POST"])
 def chat():
