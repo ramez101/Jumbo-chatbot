@@ -144,6 +144,9 @@ def generer_cartes_html(produits_trouves):
     '''
     return html
 
+@app.route("/")
+def index():
+    return "✅ The Flask API is up and running! Use POST /api/chat or /api/brands."
 
 @app.route("/api/chat", methods=["POST"])
 def chat():
