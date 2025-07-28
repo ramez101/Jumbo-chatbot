@@ -3,3 +3,4 @@ flask-cors
 together
 thefuzz
 python-Levenshtein
+fuzzywuzzy
