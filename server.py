@@ -235,10 +235,15 @@ def get_brands():
         return jsonify({"brands": []})
 
     toutes_les_categories = list({nettoyer(p.get("category", "")) for p in produits if p.get("category")})
-    similarites = [(fuzz.token_set_ratio(message_clean, cat), cat) for cat in toutes_les_categories]
+    similarites = [(max(
+        fuzz.token_set_ratio(message_clean, cat),
+        fuzz.partial_ratio(message_clean, cat),
+        fuzz.ratio(message_clean, cat)
+    ), cat) for cat in toutes_les_categories]
+
 
     max_score = max([s for s, _ in similarites], default=0)
-    seuil = max(85, max_score - 5)
+    seuil = max(70, max_score - 5)
     categories_trouvees = {cat for score, cat in similarites if score >= seuil}
 
     marques_trouvees = set()
